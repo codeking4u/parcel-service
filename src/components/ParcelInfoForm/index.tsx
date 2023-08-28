@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState, AppDispatch } from "../../store";
 import ParcelInput from "../ParcelInput";
-import Parcel from "../../types/ParcelType";
 
 import { useNavigate } from "react-router-dom";
 import {
@@ -47,17 +46,6 @@ const ParcelInfoForm: React.FC = () => {
         selectedOriginCountry &&
         selectedDestinationCountry
       ) {
-        const quotePayload = {
-          countryFrom: selectedOriginCountry,
-          countryTo: selectedDestinationCountry,
-          packages: parcels.map((parcel) => ({
-            width: parcel.width,
-            weight: parcel.weight,
-            length: parcel.length,
-            height: parcel.height,
-          })),
-        };
-
         try {
           const quoteResponse = await dispatch(fetchQuote());
           const newPackagePrices = quoteResponse.payload.packages.map(
