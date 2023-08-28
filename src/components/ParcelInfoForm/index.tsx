@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState, AppDispatch } from "../../store";
-import ParcelInput from "./ParcelInput";
+import ParcelInput from "../ParcelInput";
 import Parcel from "../../types/ParcelType";
 import {
   addParcel,
