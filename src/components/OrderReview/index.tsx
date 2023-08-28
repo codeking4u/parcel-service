@@ -17,10 +17,10 @@ const OrderReview: React.FC<OrderReviewProps> = ({
       <h2 className="comp-title"> Order review</h2>
       {packagePrices.map((price, index) => (
         <div key={index}>
-          Package {index + 1} price : {price}
+          Package {index + 1} price : €{price}
         </div>
       ))}
-      <div className="total">Total Price: {totalPrice}</div>
+      <div className="total">Total Price: €{totalPrice}</div>
       <button className="button" onClick={handleSubmit}>
         Make an Order
       </button>

@@ -11,7 +11,7 @@ const OrderPage: React.FC = () => {
       <div className="order-confirmed">
         <p>Order Confirmed</p>
         <div className="checkmark">✔</div>
-        <p>Amount Paid: ${totalPrice}</p>
+        <p>Amount Paid: €{totalPrice}</p>
       </div>
     </div>
   );
