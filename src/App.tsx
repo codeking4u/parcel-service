@@ -1,19 +1,18 @@
 import React from "react";
-import logo from "./logo.svg";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import "./App.scss";
 
-import CountrySelectionForm from "./components/CountrySelectionForm";
-import ParcelInfoForm from "./components/ParcelInfoForm";
+import ParcelInfoPage from "./pages/parcelInfoPage";
+import OrderPage from "./pages/OrderPage";
 
 function App() {
   return (
-    <div className="App">
-      <header>
-        <h1>Shipping App</h1>
-      </header>
-      <CountrySelectionForm />
-      <ParcelInfoForm />
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<ParcelInfoPage />} />
+        <Route path="/order" element={<OrderPage />} />
+      </Routes>
+    </Router>
   );
 }
 

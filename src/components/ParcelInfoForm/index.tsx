@@ -3,6 +3,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { RootState, AppDispatch } from "../../store";
 import ParcelInput from "../ParcelInput";
 import Parcel from "../../types/ParcelType";
+
+import { useNavigate } from "react-router-dom";
 import {
   addParcel,
   updateParcel,
@@ -16,6 +18,9 @@ import "./style.scss";
 
 const ParcelInfoForm: React.FC = () => {
   const dispatch: AppDispatch = useDispatch();
+
+  const navigate = useNavigate();
+
   const parcels = useSelector((state: RootState) => state.parcels.parcels);
   const selectedOriginCountry = useSelector(
     (state: RootState) => state.countries.selectedOriginCountry
@@ -69,7 +74,9 @@ const ParcelInfoForm: React.FC = () => {
     fetchParcelPrices();
   }, [dispatch, parcels, selectedOriginCountry, selectedDestinationCountry]);
 
-  const handleSubmit = () => {};
+  const handleSubmit = () => {
+    navigate("/order");
+  };
 
   return (
     <div className="parcel-form">

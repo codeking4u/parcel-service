@@ -14,6 +14,7 @@ const OrderReview: React.FC<OrderReviewProps> = ({
 }) => {
   return totalPrice != 0 ? (
     <div className="order-review">
+      <h2 className="comp-title"> Order review</h2>
       {packagePrices.map((price, index) => (
         <div key={index}>
           Package {index + 1} price : {price}
