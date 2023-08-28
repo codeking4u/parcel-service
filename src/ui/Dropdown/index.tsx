@@ -1,4 +1,5 @@
 import React from "react";
+import "./style.scss";
 
 interface DropdownProps {
   value: string;
@@ -12,7 +13,7 @@ const Dropdown: React.FC<DropdownProps> = ({ value, onChange, options }) => {
   };
 
   return (
-    <select value={value} onChange={handleSelectChange}>
+    <select className="select" value={value} onChange={handleSelectChange}>
       <option value="none">Select</option>
       {options?.map((option) => (
         <option key={option.id} value={option.id}>

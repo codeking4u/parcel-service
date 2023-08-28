@@ -11,6 +11,8 @@ import {
 
 import { fetchQuote } from "../../features/quoteSlice";
 
+import "./style.scss";
+
 const ParcelInfoForm: React.FC = () => {
   const dispatch: AppDispatch = useDispatch();
   const parcels = useSelector((state: RootState) => state.parcels.parcels);
@@ -70,24 +72,27 @@ const ParcelInfoForm: React.FC = () => {
 
   return (
     <div className="parcel-form">
-      <h2>Parcel Information</h2>
+      <h2 className="comp-title">Parcel Information</h2>
       <button
+        className="button"
         onClick={() =>
           dispatch(addParcel({ weight: 0, height: 0, width: 0, length: 0 }))
         }
       >
         Add Parcel
       </button>
-      {parcels.map((parcel, index) => (
-        <ParcelInput
-          key={index}
-          parcel={parcel}
-          onUpdate={(updatedParcel) =>
-            dispatch(updateParcel({ index, parcel: updatedParcel }))
-          }
-          onRemove={() => dispatch(removeParcel(index))}
-        />
-      ))}
+      <div className="parcelInputs">
+        {parcels.map((parcel, index) => (
+          <ParcelInput
+            key={index}
+            parcel={parcel}
+            onUpdate={(updatedParcel) =>
+              dispatch(updateParcel({ index, parcel: updatedParcel }))
+            }
+            onRemove={() => dispatch(removeParcel(index))}
+          />
+        ))}
+      </div>
       {parcels.map((_, index) => (
         <div key={index}>
           Parcel {index + 1} Price: {packagePrices[index]}

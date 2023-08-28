@@ -1,0 +1,19 @@
+.App {
+  text-align: center;
+
+  .comp-title {
+    font-size: 1rem;
+    padding-bottom: 1.5rem;
+  }
+}
+
+header {
+  padding: 3rem;
+}
+
+@media (min-width: 768px) {
+  .App {
+    max-width: 960px;
+    margin: 0 auto;
+  }
+}

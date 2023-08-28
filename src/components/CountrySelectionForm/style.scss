@@ -1,0 +1,15 @@
+.country-container {
+  border: 1px solid rgb(226, 226, 226);
+  padding: 2rem;
+
+  .countryForm {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+
+    .form-section label {
+      padding-right: 1rem;
+    }
+  }
+}

@@ -7,6 +7,7 @@ import {
 } from "../../features/countries/countriesSlice";
 import { RootState, AppDispatch } from "../../store";
 import Dropdown from "../../ui/Dropdown";
+import "./style.scss";
 
 const CountrySelectionForm: React.FC = () => {
   const dispatch: AppDispatch = useDispatch();
@@ -49,23 +50,25 @@ const CountrySelectionForm: React.FC = () => {
   }));
 
   return (
-    <div className="country-selection-form">
-      <h2>Country Selection</h2>
-      <div className="form-section">
-        <label>Origin Country:</label>
-        <Dropdown
-          value={selectedOriginCountry}
-          onChange={(value) => dispatch(setSelectedOriginCountry(value))}
-          options={originCountryOptions}
-        />
-      </div>
-      <div className="form-section">
-        <label>Destination Country:</label>
-        <Dropdown
-          value={selectedDestinationCountry}
-          onChange={(value) => dispatch(setSelectedDestinationCountry(value))}
-          options={destinationCountryOptions}
-        />
+    <div className="country-container">
+      <h2 className="comp-title">Country Selection</h2>
+      <div className="countryForm">
+        <div className="countryForm__origin form-section">
+          <label>Origin Country:</label>
+          <Dropdown
+            value={selectedOriginCountry}
+            onChange={(value) => dispatch(setSelectedOriginCountry(value))}
+            options={originCountryOptions}
+          />
+        </div>
+        <div className="countryForm__dest form-section">
+          <label>Destination Country:</label>
+          <Dropdown
+            value={selectedDestinationCountry}
+            onChange={(value) => dispatch(setSelectedDestinationCountry(value))}
+            options={destinationCountryOptions}
+          />
+        </div>
       </div>
     </div>
   );

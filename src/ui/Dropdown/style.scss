@@ -1,0 +1,14 @@
+.select {
+  appearance: none;
+  border: 1px solid #ccc;
+  padding: 8px;
+  width: 200px;
+  cursor: pointer;
+  font-size: 14px;
+  background-color: white;
+
+  &:focus {
+    outline: none;
+    border-color: #007bff;
+  }
+}
