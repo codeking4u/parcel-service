@@ -1,0 +1,36 @@
+.parcel-input {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-around;
+  margin-top: 1rem;
+
+  .input-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  input {
+    margin-bottom: 8px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  label {
+    font-size: 0.7rem;
+    margin-bottom: 4px;
+  }
+
+  button {
+    background-color: #3498db;
+    color: white;
+    margin-top: 1.2rem;
+
+    &:hover {
+      background-color: #2980b9;
+    }
+  }
+}

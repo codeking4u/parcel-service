@@ -8,6 +8,7 @@ import {
   updateParcel,
   removeParcel,
 } from "../../features/parcelsSlice";
+import OrderReview from "../OrderReview";
 
 import { fetchQuote } from "../../features/quoteSlice";
 
@@ -83,23 +84,24 @@ const ParcelInfoForm: React.FC = () => {
       </button>
       <div className="parcelInputs">
         {parcels.map((parcel, index) => (
-          <ParcelInput
-            key={index}
-            parcel={parcel}
-            onUpdate={(updatedParcel) =>
-              dispatch(updateParcel({ index, parcel: updatedParcel }))
-            }
-            onRemove={() => dispatch(removeParcel(index))}
-          />
+          <div className="parcelInput-wrapper">
+            <label className="parcel-title"> Package {index + 1} </label>
+            <ParcelInput
+              key={index}
+              parcel={parcel}
+              onUpdate={(updatedParcel) =>
+                dispatch(updateParcel({ index, parcel: updatedParcel }))
+              }
+              onRemove={() => dispatch(removeParcel(index))}
+            />
+          </div>
         ))}
       </div>
-      {parcels.map((_, index) => (
-        <div key={index}>
-          Parcel {index + 1} Price: {packagePrices[index]}
-        </div>
-      ))}
-      <div>Total Price: {totalPrice}</div>
-      <button onClick={handleSubmit}>Make an Order</button>
+      <OrderReview
+        packagePrices={packagePrices}
+        totalPrice={totalPrice}
+        handleSubmit={handleSubmit}
+      />
     </div>
   );
 };

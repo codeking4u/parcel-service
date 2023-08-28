@@ -1,0 +1,19 @@
+.order-review {
+  background-color: rgb(182 216 243);
+  border: 1px solid rgb(164, 164, 248);
+  color: #000000;
+  padding: 2rem;
+  div {
+    font-size: 0.8rem;
+    padding-top: 10px;
+
+    &.total {
+      font-size: 1rem;
+      font-weight: 700;
+    }
+  }
+
+  button {
+    margin-top: 1rem;
+  }
+}

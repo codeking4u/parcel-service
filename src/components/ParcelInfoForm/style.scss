@@ -1,2 +1,20 @@
-.parcelInputs {
+.parcel-form {
+  border: 1px solid rgb(226, 226, 226);
+  padding: 2rem;
+  margin-top: 1rem;
+
+  .parcelInput-wrapper {
+    margin: 10px 0;
+    padding: 16px 0;
+    border: 1px solid #d6d6d6;
+    background-color: rgb(240, 240, 240);
+    label {
+      color: #535353;
+    }
+
+    .parcel-title {
+      color: rgb(52, 52, 52);
+      font-weight: 700;
+    }
+  }
 }
