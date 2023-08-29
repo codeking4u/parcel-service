@@ -1,5 +1,7 @@
 import React from "react";
 import { Parcel } from "../../types/ParcelType";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTrashAlt } from "@fortawesome/free-solid-svg-icons";
 import "./style.scss";
 import { ParcelInputProps } from "../../types/ParcelType";
 
@@ -55,8 +57,8 @@ const ParcelInput: React.FC<ParcelInputProps> = ({
         />
       </div>
 
-      <button className="button" onClick={onRemove}>
-        Remove
+      <button className="del-button" onClick={onRemove}>
+        <FontAwesomeIcon icon={faTrashAlt} />
       </button>
     </div>
   );
