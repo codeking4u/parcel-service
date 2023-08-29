@@ -4,7 +4,7 @@ import {
   fetchCountries,
   setSelectedOriginCountry,
   setSelectedDestinationCountry,
-} from "../../features/countries/countriesSlice";
+} from "../../features/countriesSlice";
 import { RootState, AppDispatch } from "../../store";
 import Dropdown from "../../ui/Dropdown";
 import "./style.scss";

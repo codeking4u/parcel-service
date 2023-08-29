@@ -1,6 +1,6 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { ThunkAction } from "redux-thunk";
-import { RootState } from "../../store";
+import { RootState } from "../store";
 
 interface CountriesState {
   countries: { id: string; name: string }[];
