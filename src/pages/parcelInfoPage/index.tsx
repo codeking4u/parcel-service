@@ -12,7 +12,7 @@ const ParcelInfoPage = () => {
     (state: RootState) => state.countries.selectedDestinationCountry
   );
 
-  // Check if both source and destination countries are selected
+  // Checking if both source and destination countries are selected
   const areCountriesSelected =
     selectedOriginCountry &&
     selectedDestinationCountry &&

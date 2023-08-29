@@ -1,6 +1,8 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import { RootState } from "../store";
 
+const apiUrl = process.env.REACT_APP_API_URL;
+
 export const createOrder = createAsyncThunk(
   "orders/createOrder",
   async (_, thunkAPI) => {
@@ -20,7 +22,7 @@ export const createOrder = createAsyncThunk(
       })),
     };
 
-    const response = await fetch("http://localhost:8000/api/order", {
+    const response = await fetch(`${apiUrl}/api/order`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -37,14 +39,6 @@ const orderSlice = createSlice({
   name: "orders",
   initialState: {},
   reducers: {},
-  extraReducers: (builder) => {
-    builder.addCase(createOrder.fulfilled, (state, action) => {
-      // Handle successful order creation if needed
-    });
-    builder.addCase(createOrder.rejected, (state, action) => {
-      // Handle order creation error if needed
-    });
-  },
 });
 
 export default orderSlice.reducer;

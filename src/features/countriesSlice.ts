@@ -11,6 +11,8 @@ const initialState: CountriesState = {
   error: null,
 };
 
+const apiUrl = process.env.REACT_APP_API_URL;
+
 const countriesSlice = createSlice({
   name: "countries",
   initialState,
@@ -52,7 +54,7 @@ export const fetchCountries =
     dispatch(fetchCountriesStart());
 
     try {
-      const response = await fetch("http://localhost:8000/api/countries");
+      const response = await fetch(`${apiUrl}/api/countries`);
       const data = await response.json();
       console.log(data);
       dispatch(fetchCountriesSuccess(data));
