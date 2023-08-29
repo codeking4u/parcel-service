@@ -1,11 +1,6 @@
 import React from "react";
+import OrderReviewProps from "../../types/OrderType";
 import "./style.scss";
-
-interface OrderReviewProps {
-  packagePrices: number[];
-  totalPrice: number;
-  handleSubmit: () => void;
-}
 
 const OrderReview: React.FC<OrderReviewProps> = ({
   packagePrices,

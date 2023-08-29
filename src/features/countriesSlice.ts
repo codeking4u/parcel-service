@@ -1,14 +1,7 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { ThunkAction } from "redux-thunk";
 import { RootState } from "../store";
-
-interface CountriesState {
-  countries: { id: string; name: string }[];
-  selectedOriginCountry: string;
-  selectedDestinationCountry: string;
-  loading: boolean;
-  error: string | null;
-}
+import CountriesState from "../types/CountryType";
 
 const initialState: CountriesState = {
   countries: [],

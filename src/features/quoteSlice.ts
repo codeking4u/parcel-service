@@ -1,18 +1,6 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import { RootState } from "../store";
-
-interface Package {
-  width: number;
-  weight: number;
-  length: number;
-  height: number;
-  price: number;
-}
-
-interface QuoteState {
-  packages: Package[];
-  totalPrice: number;
-}
+import { QuoteState } from "../types/QuoteType";
 
 const initialState: QuoteState = {
   packages: [],

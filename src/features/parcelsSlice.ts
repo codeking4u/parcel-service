@@ -2,17 +2,7 @@
 
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { RootState } from "../store";
-
-interface Parcel {
-  weight: number;
-  height: number;
-  width: number;
-  length: number;
-}
-
-interface ParcelsState {
-  parcels: Parcel[];
-}
+import { Parcel, ParcelsState } from "../types/ParcelType";
 
 const initialState: ParcelsState = {
   parcels: [],

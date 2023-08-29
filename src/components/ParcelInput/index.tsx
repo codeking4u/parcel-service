@@ -1,18 +1,7 @@
 import React from "react";
+import { Parcel } from "../../types/ParcelType";
 import "./style.scss";
-
-interface Parcel {
-  weight: number;
-  height: number;
-  width: number;
-  length: number;
-}
-
-interface ParcelInputProps {
-  parcel: Parcel;
-  onUpdate: (updatedParcel: Parcel) => void;
-  onRemove: () => void;
-}
+import { ParcelInputProps } from "../../types/ParcelType";
 
 const ParcelInput: React.FC<ParcelInputProps> = ({
   parcel,
