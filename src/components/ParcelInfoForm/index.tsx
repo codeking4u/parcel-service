@@ -13,6 +13,8 @@ import OrderReview from "../OrderReview";
 
 import { fetchQuote } from "../../features/quoteSlice";
 
+import { createOrder } from "../../features/orderSlice";
+
 import "./style.scss";
 
 const ParcelInfoForm: React.FC = () => {
@@ -62,8 +64,13 @@ const ParcelInfoForm: React.FC = () => {
     fetchParcelPrices();
   }, [dispatch, parcels, selectedOriginCountry, selectedDestinationCountry]);
 
-  const handleSubmit = () => {
-    navigate("/order");
+  const handleSubmit = async () => {
+    try {
+      const response = await dispatch(createOrder());
+      navigate("/order");
+    } catch (error) {
+      // Handle error response
+    }
   };
 
   return (
