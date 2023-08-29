@@ -88,7 +88,7 @@ const ParcelInfoForm: React.FC = () => {
       </button>
       <div className="parcelInputs">
         {parcels.map((parcel, index) => (
-          <div className="parcelInput-wrapper">
+          <div className="parcelInput-wrapper" key={index}>
             <label className="parcel-title"> Package {index + 1} </label>
             <ParcelInput
               key={index}

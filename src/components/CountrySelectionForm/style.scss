@@ -10,6 +10,13 @@
 
     .form-section label {
       padding-right: 1rem;
+      @media (max-width: 450px) {
+        display: flex;
+        flex-direction: column;
+      }
+    }
+    @media (max-width: 450px) {
+      flex-direction: column;
     }
   }
 }
