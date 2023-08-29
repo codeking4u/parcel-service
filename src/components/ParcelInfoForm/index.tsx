@@ -67,9 +67,11 @@ const ParcelInfoForm: React.FC = () => {
   const handleSubmit = async () => {
     try {
       const response = await dispatch(createOrder());
-      navigate("/order");
+
+      console.log("response before", response);
+      navigate("/order", { state: response });
     } catch (error) {
-      // Handle error response
+      console.log(error);
     }
   };
 
